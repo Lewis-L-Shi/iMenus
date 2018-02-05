@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9133449320244EEB00AEA3F4 /* Restaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9133449220244EEB00AEA3F4 /* Restaurants.swift */; };
+		91C1925F2029062E00CCCBF0 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C1925E2029062E00CCCBF0 /* Meal.swift */; };
+		91C1926120290A3E00CCCBF0 /* MealTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C1926020290A3E00CCCBF0 /* MealTableViewController.swift */; };
+		91C1926320290A8C00CCCBF0 /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C1926220290A8C00CCCBF0 /* MealTableViewCell.swift */; };
+		91C770A520246F8B00BF72C1 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C770A420246F8B00BF72C1 /* SecondViewController.swift */; };
+		91F1362020181C6300D11166 /* RestuarantTableViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F1361F20181C6300D11166 /* RestuarantTableViewTableViewController.swift */; };
+		91F1362220181D8000D11166 /* RestuarantsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F1362120181D8000D11166 /* RestuarantsTableViewCell.swift */; };
 		F6E0315320180822003233F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0315220180822003233F4 /* AppDelegate.swift */; };
 		F6E0315520180822003233F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0315420180822003233F4 /* ViewController.swift */; };
 		F6E0315820180822003233F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6E0315620180822003233F4 /* Main.storyboard */; };
@@ -34,6 +41,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9133449220244EEB00AEA3F4 /* Restaurants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurants.swift; sourceTree = "<group>"; };
+		91C1925E2029062E00CCCBF0 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		91C1926020290A3E00CCCBF0 /* MealTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewController.swift; sourceTree = "<group>"; };
+		91C1926220290A8C00CCCBF0 /* MealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
+		91C770A420246F8B00BF72C1 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		91F1361F20181C6300D11166 /* RestuarantTableViewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestuarantTableViewTableViewController.swift; sourceTree = "<group>"; };
+		91F1362120181D8000D11166 /* RestuarantsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestuarantsTableViewCell.swift; sourceTree = "<group>"; };
 		F6E0314F20180822003233F4 /* iMenus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMenus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6E0315220180822003233F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6E0315420180822003233F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,12 +111,19 @@
 		F6E0315120180822003233F4 /* iMenus */ = {
 			isa = PBXGroup;
 			children = (
+				91F1362120181D8000D11166 /* RestuarantsTableViewCell.swift */,
+				91C1926220290A8C00CCCBF0 /* MealTableViewCell.swift */,
 				F6E0315220180822003233F4 /* AppDelegate.swift */,
 				F6E0315420180822003233F4 /* ViewController.swift */,
 				F6E0315620180822003233F4 /* Main.storyboard */,
+				91C1926020290A3E00CCCBF0 /* MealTableViewController.swift */,
+				91F1361F20181C6300D11166 /* RestuarantTableViewTableViewController.swift */,
 				F6E0315920180822003233F4 /* Assets.xcassets */,
 				F6E0315B20180822003233F4 /* LaunchScreen.storyboard */,
 				F6E0315E20180822003233F4 /* Info.plist */,
+				9133449220244EEB00AEA3F4 /* Restaurants.swift */,
+				91C770A420246F8B00BF72C1 /* SecondViewController.swift */,
+				91C1925E2029062E00CCCBF0 /* Meal.swift */,
 			);
 			path = iMenus;
 			sourceTree = "<group>";
@@ -259,7 +280,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91C770A520246F8B00BF72C1 /* SecondViewController.swift in Sources */,
+				9133449320244EEB00AEA3F4 /* Restaurants.swift in Sources */,
+				91C1925F2029062E00CCCBF0 /* Meal.swift in Sources */,
+				91F1362220181D8000D11166 /* RestuarantsTableViewCell.swift in Sources */,
 				F6E0315520180822003233F4 /* ViewController.swift in Sources */,
+				91C1926320290A8C00CCCBF0 /* MealTableViewCell.swift in Sources */,
+				91F1362020181C6300D11166 /* RestuarantTableViewTableViewController.swift in Sources */,
+				91C1926120290A3E00CCCBF0 /* MealTableViewController.swift in Sources */,
 				F6E0315320180822003233F4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
