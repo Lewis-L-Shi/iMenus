@@ -8,15 +8,16 @@
 import UIKit
 class SecondViewController: UIViewController {
     
-    @IBOutlet weak var Name: UILabel!
+    @IBOutlet weak var Description: UILabel!
+    @IBOutlet weak var ContactInfo: UILabel!
     @IBOutlet weak var defImage: UIImageView!
     // This variable will hold the data being passed from the First View Controller
-    var receivedData1:UIImage!
-    var receivedData2:String!
+    var passedRes:Restaurants!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Name.text=receivedData2
-        defImage.image=receivedData1
+        Description.text = passedRes.resDescription
+        ContactInfo.text = passedRes.contactInfo
+        defImage.image = passedRes.photo
     }
 }

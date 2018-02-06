@@ -11,14 +11,16 @@ import UIKit
 class Restaurants {
     var name: String
     var photo: UIImage?
-    init?(name: String, photo: UIImage?) {
+    var resDescription: String
+    var contactInfo: String
+    init?(name: String, photo: UIImage?, resDescription: String, contactInfo: String) {
         if name.isEmpty {
             return nil
         }
         self.name = name
         self.photo = photo
-        
-        
+        self.resDescription = resDescription
+        self.contactInfo = contactInfo
     }
 
 }

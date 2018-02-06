@@ -33,26 +33,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="128.80000000000001" y="-252.32383808095955"/>
+            <point key="canvasLocation" x="434" y="-179"/>
         </scene>
         <!--Restaurants List-->
         <scene sceneID="yLM-eh-uLv">
             <objects>
                 <tableViewController id="KrN-5T-Eid" customClass="RestuarantTableViewTableViewController" customModule="iMenus" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VZQ-Y7-Isc">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VZQ-Y7-Isc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestuarantsTableViewCell" rowHeight="140" id="s6C-4u-gQt" customClass="RestuarantsTableViewCell" customModule="iMenus">
-                                <rect key="frame" x="0.0" y="28" width="375" height="140"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestuarantsTableViewCell" rowHeight="100" id="s6C-4u-gQt" customClass="RestuarantsTableViewCell" customModule="iMenus">
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="s6C-4u-gQt" id="fuE-nb-MHD">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="139.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defualtphoto" highlightedImage="defualtphoto" translatesAutoresizingMaskIntoConstraints="NO" id="tl4-YC-wUz">
-                                            <rect key="frame" x="0.0" y="0.0" width="376" height="64"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defualtphoto" highlightedImage="defualtphoto" translatesAutoresizingMaskIntoConstraints="NO" id="tl4-YC-wUz">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
@@ -68,13 +68,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Restaurants List" id="A0O-nx-NhC"/>
+                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <segue destination="win-qh-kVK" kind="show" identifier="RestViewSegue" id="RO6-az-Tn0"/>
+                        <segue destination="win-qh-kVK" kind="show" identifier="RestViewSegue" id="vht-Wd-4OO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAR-y0-5NH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2060" y="-252.32383808095955"/>
+            <point key="canvasLocation" x="2017" y="-179"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="2kz-rB-Oq7">
@@ -84,37 +85,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPh-B4-O0l">
-                                <rect key="frame" x="98" y="131" width="179" height="94"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPh-B4-O0l" userLabel="Description">
+                                <rect key="frame" x="67" y="258" width="240" height="122"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LRM-TB-uLV">
-                                <rect key="frame" x="67" y="247" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LRM-TB-uLV">
+                                <rect key="frame" x="0.0" y="81" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQM-3o-aS4">
-                                <rect key="frame" x="164" y="435" width="46" height="30"/>
+                                <rect key="frame" x="164" y="596" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Menu"/>
                                 <connections>
                                     <segue destination="1wZ-Bb-Kdu" kind="show" id="boc-aT-oQX"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPg-dW-9T9" userLabel="ContactInfo">
+                                <rect key="frame" x="16" y="284" width="343" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyK-y3-Flo" userLabel="ContactInfo">
+                                <rect key="frame" x="16" y="432" width="343" height="138"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="GIa-uP-nKb"/>
                     </view>
                     <connections>
-                        <outlet property="Name" destination="bPh-B4-O0l" id="PvZ-fX-qw5"/>
-                        <outlet property="defImage" destination="LRM-TB-uLV" id="hlU-Ag-D64"/>
+                        <outlet property="ContactInfo" destination="uyK-y3-Flo" id="rzI-5s-Mkg"/>
+                        <outlet property="Description" destination="bPh-B4-O0l" id="zgy-sw-srj"/>
+                        <outlet property="defImage" destination="LRM-TB-uLV" id="hXd-oo-UUw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="akn-FD-JO6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2756" y="-170.46476761619192"/>
+            <point key="canvasLocation" x="2760.8000000000002" y="-179.46026986506749"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="TSS-U5-iq1">
@@ -158,7 +174,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KiV-VB-gjl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3613.5999999999999" y="-170.46476761619192"/>
+            <point key="canvasLocation" x="3553" y="-179"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="8kS-Vy-rJn">
@@ -173,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R9e-ak-ixO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4289" y="-178"/>
+            <point key="canvasLocation" x="4279" y="-179"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Yqc-1o-th4">
@@ -191,7 +207,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJ0-ff-ZU5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1292" y="-252"/>
+            <point key="canvasLocation" x="1281" y="-179"/>
         </scene>
     </scenes>
     <resources>
