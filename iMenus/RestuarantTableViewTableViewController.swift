@@ -10,8 +10,7 @@ import UIKit
 
 class RestuarantTableViewTableViewController: UITableViewController {
     var restaurants=[Restaurants]()
-    var valueToPass:UIImage!
-    var selectedRestaurant:Restaurants!
+    var valueToPass:Restaurants!
     override func viewDidLoad() {
         super.viewDidLoad()
         loadRestuarants()
@@ -43,15 +42,21 @@ class RestuarantTableViewTableViewController: UITableViewController {
         let photo1 = UIImage(named: "rest1")
         let photo2 = UIImage(named: "rest2")
         let photo3 = UIImage(named: "rest3")
-        guard let restaurant1 = Restaurants(name: "Saffron Grill", photo: photo1) else {
+        let desc1 = "Saffron Grill brings to the Northgate area an inventive fusion of Indian and Mediterranean cuisine served in an inviting atmosphere that encourages you to linger."
+        let desc2 = "Traditional Chinese eatery with Taiwanese influences."
+        let desc3 = "Bai Tong is the standard for authentic Thai food in the Seattle area."
+        let contact1 = "2132 N Northgate Way\nSeattle  WA, 98133\n(206) 417 0707"
+        let contact2 = "6969 Coal Creek Pkwy SE\nNewcastle, WA 98059\n(425) 644-5546"
+        let contact3 = "14804  NE 24th St.\nRedmond, WA 98052\n(425) 747-8424"
+        guard let restaurant1 = Restaurants(name: "Saffron Grill", photo: photo1, resDescription: desc1, contactInfo: contact1) else {
             fatalError("Unable to instantiate restuarant11")
         }
         
-        guard let restuarant2 = Restaurants(name: "BaiTong", photo: photo2) else {
+        guard let restuarant2 = Restaurants(name: "Yea's Wok", photo: photo2, resDescription: desc2, contactInfo: contact2) else {
             fatalError("Unable to instantiate restaurant2")
         }
         
-        guard let restuarant3 = Restaurants(name: "Altura", photo: photo3) else {
+        guard let restuarant3 = Restaurants(name: "Baitong", photo: photo3, resDescription: desc3, contactInfo: contact3) else {
             fatalError("Unable to instantiate restaurant3")
         }
         restaurants+=[restaurant1,restuarant2,restuarant3]
@@ -74,12 +79,8 @@ class RestuarantTableViewTableViewController: UITableViewController {
         
         // Segue to the second view controller
         let indexPath = tableView.indexPathForSelectedRow!
-        let currentCell = tableView.cellForRow(at: indexPath)! as! RestuarantsTableViewCell
-        selectedRestaurant=restaurants[indexPath.row]
-        valueToPass = currentCell.def.image
+        valueToPass = restaurants[indexPath.row]
         self.performSegue(withIdentifier: "RestViewSegue", sender: self)
-        
-        
     }
     
     // This function is called before the segue
@@ -89,8 +90,7 @@ class RestuarantTableViewTableViewController: UITableViewController {
         let secondViewController = segue.destination as! SecondViewController
         
         // set a variable in the second view controller with the data to pass
-        secondViewController.receivedData1=valueToPass
-        secondViewController.receivedData2=selectedRestaurant.name
+        secondViewController.passedRes=valueToPass
         
     }
     /*
