@@ -45,23 +45,24 @@ class RestuarantTableViewTableViewController: UITableViewController {
         let desc1 = "Saffron Grill brings to the Northgate area an inventive fusion of Indian and Mediterranean cuisine served in an inviting atmosphere that encourages you to linger."
         let desc2 = "Traditional Chinese eatery with Taiwanese influences."
         let desc3 = "Bai Tong is the standard for authentic Thai food in the Seattle area."
+        let desc4 = "Twice cooked pork is a Chinese dish that originates from the Sichuan region of China. The dish is prepared by first simmering pork belly steaks in in water with spices, e.g. slices of ginger, cloves, star anise, jujubes and salt. After refrigeration to firm the meat, it's cut into thin slices and then shallow fried with oil in a wok along with various vegetables. Cooking the pork twice over makes each slice incredibly tender and rich in taste. You can expect the dish to be full of salty and spicy flavors."
         let contact1 = "2132 N Northgate Way\nSeattle  WA, 98133\n(206) 417 0707"
         let contact2 = "6969 Coal Creek Pkwy SE\nNewcastle, WA 98059\n(425) 644-5546"
         let contact3 = "14804  NE 24th St.\nRedmond, WA 98052\n(425) 747-8424"
-        guard let restaurant1 = Restaurants(name: "Saffron Grill", photo: photo1, resDescription: desc1, contactInfo: contact1) else {
+        guard let tcp = Dish(dishName: "Twice Cooked Pork", dishPhoto: #imageLiteral(resourceName: "TwiceCookedPork"), dishDescription: desc4)else {
             fatalError("Unable to instantiate restuarant11")
         }
-        
-        guard let restuarant2 = Restaurants(name: "Yea's Wok", photo: photo2, resDescription: desc2, contactInfo: contact2) else {
+        guard let restaurant1 = Restaurants(name: "Saffron Grill", photo: photo1, resDescription: desc1, contactInfo: contact1, Menu: [tcp]) else {
+            fatalError("Unable to instantiate restuarant11")
+        }
+        guard let restuarant2 = Restaurants(name: "Yea's Wok", photo: photo2, resDescription: desc2, contactInfo: contact2, Menu: [tcp]) else {
             fatalError("Unable to instantiate restaurant2")
         }
         
-        guard let restuarant3 = Restaurants(name: "Baitong", photo: photo3, resDescription: desc3, contactInfo: contact3) else {
+        guard let restuarant3 = Restaurants(name: "Baitong", photo: photo3, resDescription: desc3, contactInfo: contact3, Menu: [tcp]) else {
             fatalError("Unable to instantiate restaurant3")
         }
         restaurants+=[restaurant1,restuarant2,restuarant3]
-        
-    
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -69,7 +70,7 @@ class RestuarantTableViewTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? RestuarantsTableViewCell  else {
             fatalError("The dequeued cell is not an instance of RestaurantTableViewCell.")
         }
-         let restaurant=restaurants[indexPath.row]
+        let restaurant=restaurants[indexPath.row]
         cell.def.image = restaurant.photo
 
         return cell
@@ -87,10 +88,10 @@ class RestuarantTableViewTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         // get a reference to the second view controller
-        let secondViewController = segue.destination as! SecondViewController
+        let resController = segue.destination as! RestaurantController
         
         // set a variable in the second view controller with the data to pass
-        secondViewController.passedRes=valueToPass
+        resController.passedRes=valueToPass
         
     }
     /*

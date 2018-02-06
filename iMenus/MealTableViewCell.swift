@@ -9,9 +9,10 @@
 import UIKit
 
 class MealTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var dishPhoto: UIImageView!
     @IBOutlet weak var dishName: UILabel!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -13,7 +13,8 @@ class Restaurants {
     var photo: UIImage?
     var resDescription: String
     var contactInfo: String
-    init?(name: String, photo: UIImage?, resDescription: String, contactInfo: String) {
+    var Menu=[Dish]()
+    init?(name: String, photo: UIImage?, resDescription: String, contactInfo: String, Menu: [Dish]) {
         if name.isEmpty {
             return nil
         }
@@ -21,6 +22,6 @@ class Restaurants {
         self.photo = photo
         self.resDescription = resDescription
         self.contactInfo = contactInfo
+        self.Menu = Menu
     }
-
 }
