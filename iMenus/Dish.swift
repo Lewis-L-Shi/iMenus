@@ -1,5 +1,5 @@
 //
-//  Meal.swift
+//  Dish.swift
 //  iMenus
 //
 //  Created by Azra Bandukwala on 2/5/18.
@@ -8,23 +8,17 @@
 
 import UIKit
 
-class Meal {
-    var dishId:integer_t
+class Dish {
     var dishName: String
     var dishPhoto: UIImage?
     var dishDescription: String
-    var dishIngredients: String
-    var dishKeyFlavours: String
-    init?(dishId: integer_t, dishName: String, dishPhoto: UIImage?, dishDescription: String,dishIngredients:String, dishKeyFlavours: String ) {
+    init?(dishName: String, dishPhoto: UIImage?, dishDescription: String) {
         if dishName.isEmpty {
             return nil
         }
-        self.dishId=dishId
         self.dishName = dishName
         self.dishPhoto = dishPhoto
         self.dishDescription=dishDescription
-        self.dishIngredients=dishIngredients
-        self.dishKeyFlavours=dishKeyFlavours
         
     }
     
