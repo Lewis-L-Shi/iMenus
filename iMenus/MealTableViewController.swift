@@ -11,6 +11,7 @@ import UIKit
 class MealTableViewController: UITableViewController {
     
     var passedRes: Restaurants!
+    var valueToPass:Dish!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +50,25 @@ class MealTableViewController: UITableViewController {
         cell.dishName.text = dish.dishName
         cell.dishPhoto.image = dish.dishPhoto
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // Segue to the second view controller
+        let indexPath = tableView.indexPathForSelectedRow!
+        valueToPass = passedRes.Menu[indexPath.row]
+        self.performSegue(withIdentifier: "dishViewSegue", sender: self)
+    }
+    
+    // This function is called before the segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // get a reference to the second view controller
+        let dishController = segue.destination as! DishViewController
+        
+        // set a variable in the second view controller with the data to pass
+        dishController.dishDataReceived=valueToPass
+        
     }
 
     /*

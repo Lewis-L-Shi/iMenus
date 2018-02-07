@@ -173,27 +173,52 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="KWn-R7-KRk" kind="show" id="bjb-Bg-75m"/>
+                        <segue destination="KWn-R7-KRk" kind="show" identifier="dishViewSegue" id="bjb-Bg-75m"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KiV-VB-gjl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3552.8000000000002" y="-179.46026986506749"/>
         </scene>
-        <!--View Controller-->
+        <!--Dish View Controller-->
         <scene sceneID="8kS-Vy-rJn">
             <objects>
-                <viewController id="KWn-R7-KRk" sceneMemberID="viewController">
+                <viewController id="KWn-R7-KRk" customClass="DishViewController" customModule="iMenus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ziZ-HQ-SLQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hKz-yx-aBA">
+                                <rect key="frame" x="88" y="76" width="199" height="184"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Xx4-MU-EUP">
+                                <rect key="frame" x="16" y="402" width="343" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9s-FS-zcO">
+                                <rect key="frame" x="16" y="294" width="343" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="33p-MJ-O7G"/>
                     </view>
+                    <connections>
+                        <outlet property="dishDescription" destination="Xx4-MU-EUP" id="RtY-uC-KMo"/>
+                        <outlet property="dishImage" destination="hKz-yx-aBA" id="Uzd-AF-To8"/>
+                        <outlet property="dishName" destination="C9s-FS-zcO" id="wnU-Dj-GPE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R9e-ak-ixO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4279" y="-179"/>
+            <point key="canvasLocation" x="4277.6000000000004" y="-179.46026986506749"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Yqc-1o-th4">
