@@ -14,6 +14,7 @@
 		91C770A520246F8B00BF72C1 /* RestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C770A420246F8B00BF72C1 /* RestaurantController.swift */; };
 		91F1362020181C6300D11166 /* RestuarantTableViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F1361F20181C6300D11166 /* RestuarantTableViewTableViewController.swift */; };
 		91F1362220181D8000D11166 /* RestuarantsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F1362120181D8000D11166 /* RestuarantsTableViewCell.swift */; };
+		91F93ED5202A89BD00991FAF /* DishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F93ED4202A89BD00991FAF /* DishViewController.swift */; };
 		F6E0315320180822003233F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0315220180822003233F4 /* AppDelegate.swift */; };
 		F6E0315520180822003233F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0315420180822003233F4 /* ViewController.swift */; };
 		F6E0315820180822003233F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6E0315620180822003233F4 /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		91C770A420246F8B00BF72C1 /* RestaurantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantController.swift; sourceTree = "<group>"; };
 		91F1361F20181C6300D11166 /* RestuarantTableViewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestuarantTableViewTableViewController.swift; sourceTree = "<group>"; };
 		91F1362120181D8000D11166 /* RestuarantsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestuarantsTableViewCell.swift; sourceTree = "<group>"; };
+		91F93ED4202A89BD00991FAF /* DishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishViewController.swift; sourceTree = "<group>"; };
 		F6E0314F20180822003233F4 /* iMenus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMenus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6E0315220180822003233F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6E0315420180822003233F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				F6E0315220180822003233F4 /* AppDelegate.swift */,
 				F6E0315420180822003233F4 /* ViewController.swift */,
 				F6E0315620180822003233F4 /* Main.storyboard */,
+				91F93ED4202A89BD00991FAF /* DishViewController.swift */,
 				91C1926020290A3E00CCCBF0 /* MealTableViewController.swift */,
 				91F1361F20181C6300D11166 /* RestuarantTableViewTableViewController.swift */,
 				F6E0315920180822003233F4 /* Assets.xcassets */,
@@ -284,6 +287,7 @@
 				9133449320244EEB00AEA3F4 /* Restaurants.swift in Sources */,
 				91C1925F2029062E00CCCBF0 /* Dish.swift in Sources */,
 				91F1362220181D8000D11166 /* RestuarantsTableViewCell.swift in Sources */,
+				91F93ED5202A89BD00991FAF /* DishViewController.swift in Sources */,
 				F6E0315520180822003233F4 /* ViewController.swift in Sources */,
 				91C1926320290A8C00CCCBF0 /* MealTableViewCell.swift in Sources */,
 				91F1362020181C6300D11166 /* RestuarantTableViewTableViewController.swift in Sources */,
