@@ -46,7 +46,6 @@ class MealTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of MealTableViewCell.")
         }
         let dish = passedRes.Menu[indexPath.row]
-        print(dish.dishName)
         cell.dishName.text = dish.dishName
         cell.dishPhoto.image = dish.dishPhoto
         return cell
