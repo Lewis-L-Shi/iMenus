@@ -169,46 +169,46 @@ class RestuarantTableViewTableViewController: UITableViewController {
         guard let dish30 = Dish(dishName: "Palak Paneer", dishPhoto: #imageLiteral(resourceName: "PalakPaneer"), dishDescription: dishDesc30)else {
             fatalError("Unable to instantiate dish")
         }
-//        let dishDesc31="Chicken tidbits deep fried & quick sauteed in chef Hunan sauce. In the sauce hot red chiles are used, sliced open and the seeds scraped out. Hunan style leaves out the sweet and favors bold/savory/hot/sour combinations."
-//        guard let dish31 = Dish(dishName: "General Tsao Chicken", dishPhoto: #imageLiteral(resourceName: "GeneralTsaoChicken"), dishDescription: dishDesc31)else {
-//            fatalError("Unable to instantiate dish")
-//        }
-//        let dishDesc32="Sliced beef sauteed with broccoli and carrots. It has a savory taste with mild spices and light soy sauce."
-//        guard let dish32 = Dish(dishName: "Beef with Broccoli", dishPhoto: #imageLiteral(resourceName: "BeefWithBroccoli"), dishDescription: dishDesc32)else {
-//            fatalError("Unable to instantiate dish")
-//        }
-//        let dishDesc33="Beef with a crunch, sweet, spicy and smothered in sauce. Quickly stir -fried beef with scallions, garlic, ginger a sweet soy sauce with an amazing spicy zing. Rejoice!"
-//        guard let dish33 = Dish(dishName: "Mongolian Beef", dishPhoto: #imageLiteral(resourceName: "MongolianBeef"), dishDescription: dishDesc33)else {
-//            fatalError("Unable to instantiate dish")
-//        }
-//        let dishDesc34="Diced chicken sauteed with celery, carrots, baby corn, bell pepper and cashew nuts."
-//        guard let dish34 = Dish(dishName: "Chicken with Cashew Nuts", dishPhoto: #imageLiteral(resourceName: "ChickenwithCashewNuts"), dishDescription: dishDesc34)else {
-//            fatalError("Unable to instantiate dish")
-//        }
-//        let dishDesc35="Fresh deep fried chicken breast with sweet & sour sauce. Sweet and sour sauce is made of sugar, ketchup, white vinegar, and soy sauce, and additional ingredients including pineapple, green pepper (capsicum), and onion."
-//        guard let dish35 = Dish(dishName: "Sweet & Sour Chicken", dishPhoto: #imageLiteral(resourceName: "Sweet&SourChicken"), dishDescription: dishDesc35)else {
-//            fatalError("Unable to instantiate dish")
-//        }
-//        let dishDesc36="Pork mixture is sauteed until pork loses it is pink color - stirring to a crumble. Then steamed green beans and garlic are added - sauteed for 3-5 minutes more. Combined with hoisin sauce, sugar, pepper flakes and soy sauce in a small bowl - stirring with a whisk to incorporate ingredients."
-//        guard let dish36 = Dish(dishName: "Sauteed String Beans with Ground Pork", dishPhoto: #imageLiteral(resourceName: "BeansWithPork"), dishDescription: dishDesc36)else {
-//            fatalError("Unable to instantiate dish")
-//        }
-//        let dishDesc37="Kung Pao Chicken, also transcribed as Gong Bao or Kung Po, is a spicy stir-fry Chinese dish made with chicken, peanuts, vegetables, and chili peppers. The classic dish in Sichuan cuisine originated in the Sichuan Province of south-western China and includes Sichuan peppercorns."
-//        guard let dish37 = Dish(dishName: "Kung Pao Chicken ", dishPhoto: #imageLiteral(resourceName: "KungPaoChicken"), dishDescription: dishDesc37)else {
-//            fatalError("Unable to instantiate dish")
-//        }
-//        let dishDesc38="Combination chow mein has lots of veggies, prawns, beef and chicken. Serve with boiled rice."
-//        guard let dish38 = Dish(dishName: "Combination Chow Mein", dishPhoto: #imageLiteral(resourceName: "CombinationOfChowMien"), dishDescription: dishDesc38)else {
-//            fatalError("Unable to instantiate dish")
-//        }
-//        let dishDesc39="Chicken drumb stick with soy sauce, sugar, and wine.The chicken comes out flavorful with a sweet and tangy glaze. Serve with rice and steamed snow peas & lettuce for a complete meal"
-//        guard let dish39 = Dish(dishName: "Chicken Drumb Stick With Soy Sauce", dishPhoto: #imageLiteral(resourceName: "ChickenDrumStickWithSoySauce"), dishDescription: dishDesc39)else{
-//            fatalError("Unable to instantiate dish")
-//        }
+        let dishDesc31="Chicken tidbits deep fried & quick sauteed in chef Hunan sauce. In the sauce hot red chiles are used, sliced open and the seeds scraped out. Hunan style leaves out the sweet and favors bold/savory/hot/sour combinations."
+        guard let dish31 = Dish(dishName: "General Tsao's Chicken", dishPhoto: #imageLiteral(resourceName: "GeneralTsao"), dishDescription: dishDesc31)else {
+            fatalError("Unable to instantiate dish")
+        }
+        let dishDesc32="Sliced beef sauteed with broccoli and carrots. It has a savory taste with mild spices and light soy sauce."
+        guard let dish32 = Dish(dishName: "Beef with Broccoli", dishPhoto: #imageLiteral(resourceName: "BeefBroc"), dishDescription: dishDesc32)else {
+            fatalError("Unable to instantiate dish")
+        }
+        let dishDesc33="Beef with a crunch, sweet, spicy and smothered in sauce. Quickly stir -fried beef with scallions, garlic, ginger a sweet soy sauce with an amazing spicy zing. Rejoice!"
+        guard let dish33 = Dish(dishName: "Mongolian Beef", dishPhoto: #imageLiteral(resourceName: "MongolianBeef"), dishDescription: dishDesc33)else {
+            fatalError("Unable to instantiate dish")
+        }
+        let dishDesc34="Diced chicken sauteed with celery, carrots, baby corn, bell pepper and cashew nuts."
+        guard let dish34 = Dish(dishName: "Chicken with Cashew Nuts", dishPhoto: #imageLiteral(resourceName: "ChickenWCashew"), dishDescription: dishDesc34)else {
+            fatalError("Unable to instantiate dish")
+        }
+        let dishDesc35="Fresh deep fried chicken breast with sweet & sour sauce. Sweet and sour sauce is made of sugar, ketchup, white vinegar, and soy sauce, and additional ingredients including pineapple, green pepper (capsicum), and onion."
+        guard let dish35 = Dish(dishName: "Sweet & Sour Chicken", dishPhoto: #imageLiteral(resourceName: "SweetSourChicken"), dishDescription: dishDesc35)else {
+            fatalError("Unable to instantiate dish")
+        }
+        let dishDesc36="Pork mixture is sauteed until pork loses it is pink color - stirring to a crumble. Then steamed green beans and garlic are added - sauteed for 3-5 minutes more. Combined with hoisin sauce, sugar, pepper flakes and soy sauce in a small bowl - stirring with a whisk to incorporate ingredients."
+        guard let dish36 = Dish(dishName: "Sauteed String Beans with Ground Pork", dishPhoto: #imageLiteral(resourceName: "StringBeansPork"), dishDescription: dishDesc36)else {
+            fatalError("Unable to instantiate dish")
+        }
+        let dishDesc37="Kung Pao Chicken, also transcribed as Gong Bao or Kung Po, is a spicy stir-fry Chinese dish made with chicken, peanuts, vegetables, and chili peppers. The classic dish in Sichuan cuisine originated in the Sichuan Province of south-western China and includes Sichuan peppercorns."
+        guard let dish37 = Dish(dishName: "Kung Pao Chicken ", dishPhoto: #imageLiteral(resourceName: "KungPaoChicken"), dishDescription: dishDesc37)else {
+            fatalError("Unable to instantiate dish")
+        }
+        let dishDesc38="Soft Tofu sauteed together with ground beef, mushrooms, and green peas. Flavored with a chili sauce and spicy Ma-La peppers. Staple of Szechuan cuisine."
+        guard let dish38 = Dish(dishName: "Mapo Tofu", dishPhoto: #imageLiteral(resourceName: "Mapo"), dishDescription: dishDesc38)else {
+            fatalError("Unable to instantiate dish")
+        }
+        let dishDesc39="West Lake Beef Soup tastes rich, mellow, fresh and smooth and has an attractive color. It generally contains ground beef with eggwhite, corn starch (which gives it thickness), and parsley It is served as an appetizer before the main meal. A well-known soup on the Chinese dining table, West Lake Beef Soup originates from Zhejiang"
+        guard let dish39 = Dish(dishName: "Westlake Soup", dishPhoto: #imageLiteral(resourceName: "WestlakeSoup"), dishDescription: dishDesc39)else{
+            fatalError("Unable to instantiate dish")
+        }
         guard let restaurant1 = Restaurants(name: "Saffron Grill", photo: photo1, resDescription: desc1, contactInfo: contact1, Menu: [dish21,dish22,dish23,dish24,dish25,dish26,dish27,dish28,dish29,dish30]) else {
             fatalError("Unable to instantiate restuarant11")
         }
-        guard let restuarant2 = Restaurants(name: "Yea's Wok", photo: photo2, resDescription: desc2, contactInfo: contact2, Menu: [dish1]) else {
+        guard let restuarant2 = Restaurants(name: "Yea's Wok", photo: photo2, resDescription: desc2, contactInfo: contact2, Menu: [dish1,dish31,dish32,dish33,dish34,dish35,dish36,dish37,dish38,dish39]) else {
             fatalError("Unable to instantiate restaurant2")
         }
         
