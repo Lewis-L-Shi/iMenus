@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9100D301203FBE7200947178 /* UserDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9100D300203FBE7200947178 /* UserDataHelper.swift */; };
+		91291FE7203EBFE6001EC753 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91291FDE203EBFE5001EC753 /* RegisterViewController.swift */; };
+		91291FE8203EBFE6001EC753 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91291FE5203EBFE6001EC753 /* LoginViewController.swift */; };
+		91291FE9203EBFE6001EC753 /* RatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91291FE6203EBFE6001EC753 /* RatingController.swift */; };
+		9175189D203ECB2200AD5E51 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9175189C203ECB2200AD5E51 /* User.swift */; };
 		91C1925F2029062E00CCCBF0 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C1925E2029062E00CCCBF0 /* Dish.swift */; };
 		91C1926120290A3E00CCCBF0 /* MealTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C1926020290A3E00CCCBF0 /* MealTableViewController.swift */; };
 		91C1926320290A8C00CCCBF0 /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C1926220290A8C00CCCBF0 /* MealTableViewCell.swift */; };
@@ -14,6 +19,7 @@
 		91F1362020181C6300D11166 /* RestuarantTableViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F1361F20181C6300D11166 /* RestuarantTableViewTableViewController.swift */; };
 		91F1362220181D8000D11166 /* RestuarantsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F1362120181D8000D11166 /* RestuarantsTableViewCell.swift */; };
 		91F93ED5202A89BD00991FAF /* DishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F93ED4202A89BD00991FAF /* DishViewController.swift */; };
+		91FE0549204023F700AB5B46 /* UDRReferenceDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FE0548204023F700AB5B46 /* UDRReferenceDataHelper.swift */; };
 		F6379C1A203E331B004F4A45 /* DishDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6379C19203E331B004F4A45 /* DishDataHelper.swift */; };
 		F6379C1C203E3A10004F4A45 /* RDReferenceDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6379C1B203E3A10004F4A45 /* RDReferenceDataHelper.swift */; };
 		F6C1E384203D151300122663 /* iMenusDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1E383203D151300122663 /* iMenusDatabase.swift */; };
@@ -120,6 +126,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9100D300203FBE7200947178 /* UserDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataHelper.swift; sourceTree = "<group>"; };
+		91291FDE203EBFE5001EC753 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		91291FE5203EBFE6001EC753 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		91291FE6203EBFE6001EC753 /* RatingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingController.swift; sourceTree = "<group>"; };
+		9175189C203ECB2200AD5E51 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		91C1925E2029062E00CCCBF0 /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		91C1926020290A3E00CCCBF0 /* MealTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewController.swift; sourceTree = "<group>"; };
 		91C1926220290A8C00CCCBF0 /* MealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
@@ -127,6 +138,7 @@
 		91F1361F20181C6300D11166 /* RestuarantTableViewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestuarantTableViewTableViewController.swift; sourceTree = "<group>"; };
 		91F1362120181D8000D11166 /* RestuarantsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestuarantsTableViewCell.swift; sourceTree = "<group>"; };
 		91F93ED4202A89BD00991FAF /* DishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishViewController.swift; sourceTree = "<group>"; };
+		91FE0548204023F700AB5B46 /* UDRReferenceDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDRReferenceDataHelper.swift; sourceTree = "<group>"; };
 		F6379C19203E331B004F4A45 /* DishDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDataHelper.swift; sourceTree = "<group>"; };
 		F6379C1B203E3A10004F4A45 /* RDReferenceDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDReferenceDataHelper.swift; sourceTree = "<group>"; };
 		F6C1E383203D151300122663 /* iMenusDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iMenusDatabase.swift; sourceTree = "<group>"; };
@@ -179,6 +191,9 @@
 		F6379C1D203E42EE004F4A45 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				91291FE5203EBFE6001EC753 /* LoginViewController.swift */,
+				91291FE6203EBFE6001EC753 /* RatingController.swift */,
+				91291FDE203EBFE5001EC753 /* RegisterViewController.swift */,
 				F6E0315420180822003233F4 /* ViewController.swift */,
 				91C770A420246F8B00BF72C1 /* RestaurantController.swift */,
 				91F1361F20181C6300D11166 /* RestuarantTableViewTableViewController.swift */,
@@ -193,6 +208,7 @@
 			children = (
 				F6C1E389203D77A200122663 /* Restaurant.swift */,
 				91C1925E2029062E00CCCBF0 /* Dish.swift */,
+				9175189C203ECB2200AD5E51 /* User.swift */,
 			);
 			path = "Entity Classes";
 			sourceTree = "<group>";
@@ -213,6 +229,8 @@
 				F6C1E38B203D7ACE00122663 /* RestaurantDataHelper.swift */,
 				F6379C19203E331B004F4A45 /* DishDataHelper.swift */,
 				F6379C1B203E3A10004F4A45 /* RDReferenceDataHelper.swift */,
+				9100D300203FBE7200947178 /* UserDataHelper.swift */,
+				91FE0548204023F700AB5B46 /* UDRReferenceDataHelper.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -494,16 +512,22 @@
 				91C770A520246F8B00BF72C1 /* RestaurantController.swift in Sources */,
 				F6C1E384203D151300122663 /* iMenusDatabase.swift in Sources */,
 				91C1925F2029062E00CCCBF0 /* Dish.swift in Sources */,
+				9100D301203FBE7200947178 /* UserDataHelper.swift in Sources */,
 				91F1362220181D8000D11166 /* RestuarantsTableViewCell.swift in Sources */,
 				F6379C1C203E3A10004F4A45 /* RDReferenceDataHelper.swift in Sources */,
+				91291FE7203EBFE6001EC753 /* RegisterViewController.swift in Sources */,
+				9175189D203ECB2200AD5E51 /* User.swift in Sources */,
 				91F93ED5202A89BD00991FAF /* DishViewController.swift in Sources */,
 				F6E0315520180822003233F4 /* ViewController.swift in Sources */,
+				91291FE9203EBFE6001EC753 /* RatingController.swift in Sources */,
 				91C1926320290A8C00CCCBF0 /* MealTableViewCell.swift in Sources */,
 				F6C1E38C203D7ACE00122663 /* RestaurantDataHelper.swift in Sources */,
 				91F1362020181C6300D11166 /* RestuarantTableViewTableViewController.swift in Sources */,
+				91291FE8203EBFE6001EC753 /* LoginViewController.swift in Sources */,
 				F6379C1A203E331B004F4A45 /* DishDataHelper.swift in Sources */,
 				91C1926120290A3E00CCCBF0 /* MealTableViewController.swift in Sources */,
 				F6E0315320180822003233F4 /* AppDelegate.swift in Sources */,
+				91FE0549204023F700AB5B46 /* UDRReferenceDataHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

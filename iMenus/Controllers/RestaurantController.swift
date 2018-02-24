@@ -13,7 +13,6 @@ class RestaurantController: UIViewController {
     @IBOutlet weak var defImage: UIImageView!
     // This variable will hold the data being passed from the First View Controller
     var passedRes:Restaurant!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         Description.text = passedRes.restaurant_description
@@ -28,3 +27,4 @@ class RestaurantController: UIViewController {
         dest.passedRes = data
     }
 }
+
