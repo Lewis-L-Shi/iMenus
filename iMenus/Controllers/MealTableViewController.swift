@@ -13,16 +13,17 @@ class MealTableViewController: UITableViewController {
     var passedRes: Restaurant!
     var valueToPass: Dish!
     var Menu: [Dish]!
-    let sections=["Appetizer", "MainCourse", "Soup", "Dessert"]
+    var sections=["Appetizer", "MainCourse", "Soup", "Dessert"]
     var appetizer_dish=[Dish]()
     var mainCourse_dish=[Dish]()
     var soup_dish=[Dish]()
     var dessert=[Dish]()
-    var sectionData:[Int: [Dish]] = [:]
+    var sectionData:[[Dish]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       // sections=["Appetizer", "MainCourse", "Soup", "Dessert"]
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -32,23 +33,36 @@ class MealTableViewController: UITableViewController {
         Menu = DishDataHelper.getDishes(restr_id: passedRes.restaurant_id)
         for dish in Menu
         {
-            switch dish.dish_category{
-            case "Appetizer"?:
+            if(dish.dish_category=="Appetizer")
+            {
                 appetizer_dish.append(dish)
-            case "MainCourse"?:
+            }
+            else if(dish.dish_category=="MainCourse")
+            {
                 mainCourse_dish.append(dish)
-            case "Soup"?:
+            }
+            else if(dish.dish_category=="Soup")
+            {
                 soup_dish.append(dish)
-            case "Dessert"?:
+            }
+            else if(dish.dish_category=="Dessert")
+            {
                 dessert.append(dish)
-            case .none:
-                mainCourse_dish.append(dish)
-            case .some(_):
-                mainCourse_dish.append(dish)
-        }
+            }
+//            switch dish.dish_category{
+//            case "Appetizer"?:
+//                appetizer_dish.append(dish)
+//            case "MainCourse"?:
+//                mainCourse_dish.append(dish)
+//            case "Soup"?:
+//                soup_dish.append(dish)
+//            case "Dessert"?:
+//                dessert.append(dish)
+            
+     //       }
             
         }
-        sectionData=[0: appetizer_dish, 1: soup_dish, 2: mainCourse_dish, 3: dessert]
+        sectionData=[appetizer_dish,mainCourse_dish, soup_dish,dessert]
        
         
     }
@@ -67,19 +81,21 @@ class MealTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return (sectionData[section]?.count)!
+        return (sectionData[section].count)
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?{
-        
+        if(sectionData[section].count==0){
+            return nil
+        }
         return sections[section]
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MealTableViewCell", for: indexPath)  as? MealTableViewCell else {
             fatalError("The dequeued cell is not an instance of MealTableViewCell.")
         }
-        
-        let dish = Menu[indexPath.row]
+      
+        let dish = sectionData[indexPath.section][indexPath.row]
         cell.dishName.text = dish.dish_name
         cell.dishPhoto.image = dish.dish_photo
         if(dish.dish_rating==nil)

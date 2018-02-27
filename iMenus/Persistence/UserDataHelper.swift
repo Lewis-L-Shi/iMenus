@@ -18,18 +18,18 @@ class UserDataHelper {
     static let username = Expression<String>("username")
     static let email = Expression<String>("email")
     static let password = Expression<String>("password")
-    static func addUser(uuser_id:Int64,uusername: String, uemailId: String, upassword: String) -> Int64? {
+    static func addUser(uuser_id:Int64,uusername: String, uemailId: String, upassword: String) {
         do {
             print("in do")
             let insert = users.insert(user_id<-uuser_id,username <- uusername, email <- uemailId, password <- upassword)
            // let insert = users.insert(username <- username, emailId <- emailId, password <- password)
-            let id = try myDB.run(insert)
+            try myDB.run(insert)
             print("after insert")
-            return id
+            return
         } catch  {
             
             //print(err)
-            return -1
+            return
         }
     }
     static func getUser(uusername:String) -> [User] {

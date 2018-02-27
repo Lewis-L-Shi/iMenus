@@ -9,7 +9,9 @@
 import UIKit
 
 @IBDesignable class RatingController: UIStackView {
+    
     var dishViewController:DishViewController!
+   // var starSize: CGSize = CGSize(width: 44.0, height: 44.0)
     @IBInspectable var starSize: CGSize = CGSize(width: 44.0, height: 44.0){
         didSet {
             setupButtons()

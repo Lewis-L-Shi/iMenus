@@ -33,7 +33,7 @@ class DishDataHelper {
         }catch{ print("Error fetching dishes from DB.") }
         return result
     }
-    static func updateDishRating(ddish_Id:Int64, newRating: Double, newNoOfRatings:Int64) -> Bool {
+    static func updateDishRating(ddish_Id:Int64, newRating: Double, newNoOfRatings:Int64) {
         let res = dishes.filter(dish_id==ddish_Id)
         do {
             let update = res.update([
@@ -41,11 +41,11 @@ class DishDataHelper {
                 num_of_ratings<-newNoOfRatings
                 ])
             if try myDB.run(update) > 0 {
-                return true
+                return
             }
         } catch {
             print("Update failed: \(error)")
         }
-        return false
+        return
     }
 }

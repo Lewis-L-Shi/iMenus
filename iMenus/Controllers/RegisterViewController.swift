@@ -81,7 +81,7 @@ class RegisterViewController: UIViewController {
         UserDefaults.standard.set(password, forKey: "password")
         UserDefaults.standard.synchronize()
         //Store in userDetails object and map it to database
-        var newRegisteredUser=User(user_id:2,username:username,emailId:emailId,password:password)
+       //var newRegisteredUser=User(user_id:2,username:username,emailId:emailId,password:password)
         // display success message and redirectto login
         let successMsg = UIAlertController(title:"Alert",message:"Registeration Successful!",preferredStyle:UIAlertControllerStyle.alert)
         let okAction = UIAlertAction(title:"Ok",style:UIAlertActionStyle.default){

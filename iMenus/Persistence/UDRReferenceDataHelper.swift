@@ -39,19 +39,19 @@ class UDRReferenceDataHelper {
         }
     }
     
-    static func updateRating(uuser_id:Int64,ddish_Id:Int64, newRating: Double) -> Bool {
+    static func updateRating(uuser_id:Int64,ddish_Id:Int64, newRating: Double) {
         let res = udr.filter((uuser_id==user_id) && (ddish_Id==dish_id))
         do {
             let update = res.update([
                 rating<-newRating
                 ])
             if try myDB.run(update) > 0 {
-                return true
+                return 
             }
         } catch {
             print("Update failed: \(error)")
         }
-        return false
+        return 
     }
 }
 
