@@ -57,7 +57,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defualtphoto" highlightedImage="defualtphoto" translatesAutoresizingMaskIntoConstraints="NO" id="tl4-YC-wUz">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tl4-YC-wUz">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -422,9 +422,6 @@
             <point key="canvasLocation" x="1281" y="-179"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="defualtphoto" width="130" height="73"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Mar-H2-hMG"/>
         <segue reference="vli-ne-Ww6"/>

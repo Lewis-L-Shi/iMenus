@@ -26,4 +26,16 @@ class RDReferenceDataHelper {
         }catch {print("Dish id query failed.")}
         return result
     }
+    
+    static func getRestaurantIdsByDishName(name: String) -> [Int64] {
+        var result = [Int64]()
+        let dish = DishDataHelper.getDishIdByName(name: name)
+        let query = ref.select(restaurant_id).filter(dish_id == dish)
+        do{
+            for res in try myDB.prepare(query) {
+                result.append(res[restaurant_id])
+            }
+        }catch { print("Could not get restaurant ids by dish name.") }
+        return result
+    }
 }

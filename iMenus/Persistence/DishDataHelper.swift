@@ -33,6 +33,17 @@ class DishDataHelper {
         }catch{ print("Error fetching dishes from DB.") }
         return result
     }
+    
+    static func getDishIdByName(name: String) -> Int64 {
+        var result: Int64
+        result = -1
+        let query = dishes.filter(dish_name == name)
+        do{
+            if let res = try myDB.pluck(query){ result = res[dish_id] }
+        }catch{ print("Error retrieving Dish ID by name.") }
+        return result
+    }
+    
     static func updateDishRating(ddish_Id:Int64, newRating: Double, newNoOfRatings:Int64) {
         let res = dishes.filter(dish_id==ddish_Id)
         do {

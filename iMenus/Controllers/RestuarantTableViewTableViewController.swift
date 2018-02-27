@@ -8,10 +8,13 @@
 
 import UIKit
 import SQLite
+import CoreLocation
+
 class RestuarantTableViewTableViewController: UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate {
-    var restaurants=RestaurantDataHelper.getAllRestaurants()
+    var restaurants = RestaurantDataHelper.getAllRestaurants()
     var valueToPass:Restaurant!
     var filteredRestuarants=[Restaurant]()
+    var sortedByDist = false
     let searchController = UISearchController(searchResultsController: nil)
     
     
@@ -36,6 +39,10 @@ class RestuarantTableViewTableViewController: UITableViewController, UISearchBar
             // For iOS 10 and earlier, we place the search bar in the table view's header.
             tableView.tableHeaderView = searchController.searchBar
         }
+        
+        let lat = UserDefaults.standard.value(forKey: "myCurrentLat") as! CLLocationDegrees
+        let long = UserDefaults.standard.value(forKey: "myCurrentLong") as! CLLocationDegrees
+        restaurants = sortRestaurantsByDist(lat: lat, long: long)
     }
     
     private func searchDisplayController(controller: UISearchController!, shouldReloadTableForSearchString searchString: String!) -> Bool {
@@ -109,6 +116,20 @@ class RestuarantTableViewTableViewController: UITableViewController, UISearchBar
         let resController = segue.destination as! RestaurantController
         // set a variable in the second view controller with the data to pass
         resController.passedRes=valueToPass
+    }
+    
+    private func sortRestaurantsByDist(lat: CLLocationDegrees, long: CLLocationDegrees) -> [Restaurant] {
+        var restrs = [Restaurant]()
+        var distances = [Double]()
+        let myCoords = CLLocation(latitude: lat, longitude: long)
+        for item in restaurants {
+            let coords = CLLocation(latitude: item.restaurant_lat, longitude: item.restaurant_long)
+            distances.append(myCoords.distance(from: coords))
+            restrs.append(item)
+        }
+        let combined = zip(distances, restrs).sorted(by: {$0.0 < $1.0})
+        let result = combined.map({$0.1})
+        return result
     }
     
     //    override func viewDidAppear(_ animated: Bool) {
