@@ -40,9 +40,10 @@ class RestuarantTableViewTableViewController: UITableViewController, UISearchBar
             tableView.tableHeaderView = searchController.searchBar
         }
         
-        let lat = UserDefaults.standard.value(forKey: "myCurrentLat") as! CLLocationDegrees
-        let long = UserDefaults.standard.value(forKey: "myCurrentLong") as! CLLocationDegrees
-        restaurants = sortRestaurantsByDist(lat: lat, long: long)
+        if let lat = UserDefaults.standard.value(forKey: "myCurrentLat") as? CLLocationDegrees {
+            let long = UserDefaults.standard.value(forKey: "myCurrentLong") as! CLLocationDegrees
+            restaurants = sortRestaurantsByDist(lat: lat, long: long)
+        }
     }
     
     private func searchDisplayController(controller: UISearchController!, shouldReloadTableForSearchString searchString: String!) -> Bool {
