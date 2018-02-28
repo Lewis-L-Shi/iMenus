@@ -13,7 +13,10 @@ import MapKit
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
-
+    @IBOutlet weak var welcomeLabel: UILabel!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -29,6 +32,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
+        logoutButton.isHidden = true
+        loginButton.isHidden = false
+        let uName = UserDefaults.standard.value(forKey: "username") as? String
+        if(uName != nil) {
+            loginButton.isHidden = true
+            logoutButton.isHidden = false
+            welcomeLabel.text = "Welcome \(uName ?? "Guest")!"
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,6 +52,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         UserDefaults.standard.setValue(locValue.latitude, forKey: "myCurrentLat")
         UserDefaults.standard.setValue(locValue.longitude, forKey: "myCurrentLong")
+    }
+    
+    @IBAction func logoutClicked(_ sender: UIButton) {
+        UserDefaults.standard.removeObject(forKey: "username")
+        UserDefaults.standard.removeObject(forKey: "user_id")
     }
     
     func copyDatabaseIfNeeded() {

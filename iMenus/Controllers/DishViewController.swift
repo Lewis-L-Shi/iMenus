@@ -41,20 +41,15 @@ class DishViewController: UIViewController {
             previousRating=Int(dishDataReceived.dish_rating!)
             ratingControl.rating=(Int(dishDataReceived.dish_rating!))
         }
-        if(UserDefaults.standard.bool(forKey: "guestUser")==true)
-        {
-            ratingControl.isHidden=true
-        }
+        
+        ratingControl.isHidden=true
         var username:String?
         username=UserDefaults.standard.string(forKey: "username")
-        if(username == nil)
-        {
-            ratingControl.isHidden=true
-        }
-        else
+        if(username != nil)
         {
             let user_id=UserDefaults.standard.integer(forKey: "user_id")
             let dishUserRatings=UDRReferenceDataHelper.getRating(uuser_id: Int64(user_id), ddish_id: dishDataReceived.dish_id)
+            ratingControl.isHidden = false
             if(!dishUserRatings.isEmpty)
             {
                 ratingControl.rating=(Int(dishUserRatings[0]))
