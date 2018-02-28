@@ -57,7 +57,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defualtphoto" highlightedImage="defualtphoto" translatesAutoresizingMaskIntoConstraints="NO" id="tl4-YC-wUz">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tl4-YC-wUz">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -73,7 +73,7 @@
                             <outlet property="delegate" destination="KrN-5T-Eid" id="BRl-Ch-rDe"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Restaurants List" id="A0O-nx-NhC"/>
+                    <navigationItem key="navigationItem" title="Restaurants List" largeTitleDisplayMode="never" id="A0O-nx-NhC"/>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="MJH-fC-yCc" id="2Lj-ni-vEk"/>
@@ -332,8 +332,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4yN-t0-uo6" customClass="RatingController" customModule="iMenus" customModuleProvider="target">
-                                            <rect key="frame" x="143" y="58" width="216" height="42"/>
+                                        <stackView verifyAmbiguity="off" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4yN-t0-uo6" customClass="RatingController" customModule="iMenus" customModuleProvider="target">
+                                            <rect key="frame" x="139" y="55" width="220" height="44"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </stackView>
                                     </subviews>
@@ -384,8 +384,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="RatingControl" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TaU-5E-R2i" customClass="RatingController" customModule="iMenus" customModuleProvider="target">
-                                <rect key="frame" x="64" y="557" width="246" height="55"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="RatingControl" translatesAutoresizingMaskIntoConstraints="NO" id="TaU-5E-R2i" customClass="RatingController" customModule="iMenus" customModuleProvider="target">
+                                <rect key="frame" x="77" y="567" width="220" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                         </subviews>
@@ -422,9 +422,6 @@
             <point key="canvasLocation" x="1281" y="-179"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="defualtphoto" width="130" height="73"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Mar-H2-hMG"/>
         <segue reference="vli-ne-Ww6"/>
