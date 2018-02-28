@@ -113,7 +113,7 @@ class MealTableViewController: UITableViewController {
         
         // Segue to the second view controller
         let indexPath = tableView.indexPathForSelectedRow!
-        valueToPass = Menu[indexPath.row]
+        valueToPass = sectionData[indexPath.section][indexPath.row]
         self.performSegue(withIdentifier: "dishViewSegue", sender: self)
     }
     
