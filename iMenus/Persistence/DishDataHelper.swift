@@ -34,6 +34,16 @@ class DishDataHelper {
         return result
     }
     
+    static func getAllDishNames() -> [String] {
+        var result = [String]()
+        do{
+            for res in try myDB.prepare(dishes) {
+                result.append(res[dish_name].lowercased())
+            }
+        }catch { print("Error getting all restaurants.") }
+        return result
+    }
+    
     static func getDishIdByName(name: String) -> Int64 {
         var result: Int64
         result = -1

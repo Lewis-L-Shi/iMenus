@@ -13,7 +13,8 @@ import CoreLocation
 class RestuarantTableViewTableViewController: UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate {
     var restaurants = RestaurantDataHelper.getAllRestaurants()
     var valueToPass:Restaurant!
-    var filteredRestuarants=[Restaurant]()
+    var filteredRestaurants=[Restaurant]()
+    var dishNames = DishDataHelper.getAllDishNames()
     var sortedByDist = false
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -23,13 +24,13 @@ class RestuarantTableViewTableViewController: UITableViewController, UISearchBar
         searchController.searchResultsUpdater = self
         searchController.searchBar.sizeToFit()
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Restaurants"
+        searchController.searchBar.placeholder = "Search for Restaurants"
         searchController.searchBar.delegate = self
         navigationItem.searchController = searchController
         definesPresentationContext = true
         if #available(iOS 11.0, *) {
             // For iOS 11 and later, we place the search bar in the navigation bar.
-            navigationController?.navigationBar.prefersLargeTitles = true
+            navigationController?.navigationBar.prefersLargeTitles = false
             
             navigationItem.searchController = searchController
             
@@ -59,9 +60,15 @@ class RestuarantTableViewTableViewController: UITableViewController, UISearchBar
         
     }
     func filterContentForSearchText(searchText: String) {
-        self.filteredRestuarants = self.restaurants.filter({( restaurant: Restaurant) -> Bool in
-            return restaurant.restaurant_name.lowercased().contains(searchText.lowercased())
+        filteredRestaurants = restaurants.filter({( restaurant: Restaurant) -> Bool in
+             restaurant.restaurant_name.lowercased().contains(searchText.lowercased())
         })
+        if(filteredRestaurants.count == 0) {
+            let dish = searchText.lowercased()
+            if(dishNames.contains(dish)){
+                filteredRestaurants = RestaurantDataHelper.getRestaurantsByDishName(name: dish.capitalized)
+            }
+        }
         tableView.reloadData()
     }
     // MARK: - Table view data source
@@ -74,7 +81,7 @@ class RestuarantTableViewTableViewController: UITableViewController, UISearchBar
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if isFiltering() {
-            return filteredRestuarants.count
+            return filteredRestaurants.count
         }
         return restaurants.count
     }
@@ -90,7 +97,7 @@ class RestuarantTableViewTableViewController: UITableViewController, UISearchBar
         }
         let restaurant:Restaurant
         if isFiltering() {
-            restaurant = filteredRestuarants[indexPath.row]
+            restaurant = filteredRestaurants[indexPath.row]
         } else {
             restaurant=restaurants[indexPath.row]
         }
@@ -103,7 +110,7 @@ class RestuarantTableViewTableViewController: UITableViewController, UISearchBar
         let indexPath = tableView.indexPathForSelectedRow!
         let restaurant:Restaurant
         if isFiltering() {
-            restaurant = filteredRestuarants[indexPath.row]
+            restaurant = filteredRestaurants[indexPath.row]
         } else {
             restaurant=restaurants[indexPath.row]
         }
