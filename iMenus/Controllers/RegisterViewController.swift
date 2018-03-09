@@ -72,7 +72,7 @@ class RegisterViewController: UIViewController {
             return;
         }
         //store user data in database. for now user defaults
-        UserDataHelper.addUser(uuser_id:7,uusername: username, uemailId: emailId, upassword: password)
+        UserDataHelper.addUser(uusername: username, uemailId: emailId, upassword: password)
         //let user=UserDataHelper.getUser(uusername: username)
         print("after get")
       // print(user.emailId)
