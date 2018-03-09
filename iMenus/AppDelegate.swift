@@ -7,15 +7,30 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
-
+    let locationManager = CLLocationManager()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        copyDatabaseIfNeeded()
+        
+        self.locationManager.requestAlwaysAuthorization()
+        
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+        
         return true
     }
 
@@ -39,6 +54,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        UserDefaults.standard.removeObject(forKey: "myCurrentLat")
+        UserDefaults.standard.removeObject(forKey: "myCurrentLong")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        UserDefaults.standard.setValue(locValue.latitude, forKey: "myCurrentLat")
+        UserDefaults.standard.setValue(locValue.longitude, forKey: "myCurrentLong")
+    }
+    
+    private func copyDatabaseIfNeeded() {
+        // Move database file from bundle to documents folder
+        
+        let fileManager = FileManager.default
+        
+        guard let documentsUrl = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        
+        let finalDatabaseURL = documentsUrl.appendingPathComponent("iMenusDB.db")
+        
+        do {
+            if !fileManager.fileExists(atPath: finalDatabaseURL.path) {
+                print("DB does not exist in documents folder")
+                
+                if let dbFilePath = Bundle.main.path(forResource: "iMenusDB", ofType: "db") {
+                    try fileManager.copyItem(atPath: dbFilePath, toPath: finalDatabaseURL.path)
+                } else {
+                    print("Uh oh - iMenusDB.db is not in the app bundle")
+                }
+            } else {
+                print("Database file found at path: \(finalDatabaseURL.path)")
+            }
+        } catch {
+            print("Unable to copy iMenusDB.db: \(error)")
+        }
     }
 
 
