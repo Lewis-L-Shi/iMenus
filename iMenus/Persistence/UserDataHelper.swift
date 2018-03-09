@@ -20,11 +20,9 @@ class UserDataHelper {
     static let password = Expression<String>("password")
     static func addUser(uusername: String, uemailId: String, upassword: String) {
         do {
-            print("in do")
             let insert = users.insert(username <- uusername, email <- uemailId, password <- upassword)
            // let insert = users.insert(username <- username, emailId <- emailId, password <- password)
             try myDB.run(insert)
-            print("after insert")
             return
         } catch  {
             
