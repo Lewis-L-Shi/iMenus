@@ -13,12 +13,13 @@ class MealTableViewController: UITableViewController {
     var passedRes: Restaurant!
     var valueToPass: Dish!
     var Menu: [Dish]!
+    var sections=["Recommended","Appetizer", "MainCourse", "Soup", "Dessert"]
     var dishArrayToPass:[Dish]!
-    var sections=["Appetizer", "MainCourse", "Soup", "Dessert"]
     var appetizer_dish=[Dish]()
     var mainCourse_dish=[Dish]()
     var soup_dish=[Dish]()
     var dessert=[Dish]()
+    var recommended_dishes=[Dish]()
     var sectionData:[[Dish]] = []
     
     override func viewDidLoad() {
@@ -50,22 +51,10 @@ class MealTableViewController: UITableViewController {
             {
                 dessert.append(dish)
             }
-//            switch dish.dish_category{
-//            case "Appetizer"?:
-//                appetizer_dish.append(dish)
-//            case "MainCourse"?:
-//                mainCourse_dish.append(dish)
-//            case "Soup"?:
-//                soup_dish.append(dish)
-//            case "Dessert"?:
-//                dessert.append(dish)
-            
-     //       }
             
         }
-        sectionData=[appetizer_dish,mainCourse_dish, soup_dish,dessert]
-       
-        
+        recommended_dishes = getTopDishes(dishes: Menu)
+        sectionData=[recommended_dishes,appetizer_dish,mainCourse_dish, soup_dish,dessert]
     }
     
     override func didReceiveMemoryWarning() {
@@ -95,7 +84,7 @@ class MealTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MealTableViewCell", for: indexPath)  as? MealTableViewCell else {
             fatalError("The dequeued cell is not an instance of MealTableViewCell.")
         }
-      
+        
         let dish = sectionData[indexPath.section][indexPath.row]
         cell.dishName.text = dish.dish_name
         cell.dishPhoto.image = dish.dish_photo
@@ -144,6 +133,20 @@ class MealTableViewController: UITableViewController {
         dishController.dishDataReceived=valueToPass
         dishController.dishArrayforSwipe=dishArrayToPass
         
+    }
+    
+    private func getTopDishes(dishes:[Dish]) -> [Dish] {
+        let dishSorted = dishes.sorted(by: dishRatingSort)
+        var result = [Dish]()
+        for i in 0 ... 4 {
+            result.append(dishSorted[i])
+        }
+        return result
+    }
+    
+    private func dishRatingSort(d1:Dish, d2:Dish) -> Bool {
+        guard let r1 = d1.dish_rating, let r2 = d2.dish_rating else { return false }
+        return r1 > r2
     }
     
     /*

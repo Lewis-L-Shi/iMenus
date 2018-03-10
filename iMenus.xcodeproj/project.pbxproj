@@ -32,7 +32,6 @@
 		F6E0315D20180822003233F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6E0315B20180822003233F4 /* LaunchScreen.storyboard */; };
 		F6E0316820180822003233F4 /* iMenusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0316720180822003233F4 /* iMenusTests.swift */; };
 		F6E0317320180822003233F4 /* iMenusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E0317220180822003233F4 /* iMenusUITests.swift */; };
-		F6E446D3203E4FC600B97AD5 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E446C6203E4F9600B97AD5 /* SQLite.framework */; };
 		F6E446D4203E4FCD00B97AD5 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E446C6203E4F9600B97AD5 /* SQLite.framework */; };
 		F6E446D5203E4FCD00B97AD5 /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F6E446C6203E4F9600B97AD5 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F6E446D9203E502200B97AD5 /* iMenusDB.db in Resources */ = {isa = PBXBuildFile; fileRef = F6E446D8203E502200B97AD5 /* iMenusDB.db */; };
@@ -167,7 +166,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6E446D4203E4FCD00B97AD5 /* SQLite.framework in Frameworks */,
-				F6E446D3203E4FC600B97AD5 /* SQLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
