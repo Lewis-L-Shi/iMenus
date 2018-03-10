@@ -14,6 +14,7 @@ class MealTableViewController: UITableViewController {
     var valueToPass: Dish!
     var Menu: [Dish]!
     var sections=["Recommended","Appetizer", "MainCourse", "Soup", "Dessert"]
+    var dishArrayToPass:[Dish]!
     var appetizer_dish=[Dish]()
     var mainCourse_dish=[Dish]()
     var soup_dish=[Dish]()
@@ -103,6 +104,22 @@ class MealTableViewController: UITableViewController {
         // Segue to the second view controller
         let indexPath = tableView.indexPathForSelectedRow!
         valueToPass = sectionData[indexPath.section][indexPath.row]
+        if(sectionData[indexPath.section][indexPath.row].dish_category=="Appetizer")
+        {
+            dishArrayToPass=appetizer_dish
+        }
+        else if(sectionData[indexPath.section][indexPath.row].dish_category=="MainCourse")
+        {
+            dishArrayToPass=mainCourse_dish
+        }
+        else if(sectionData[indexPath.section][indexPath.row].dish_category=="Soup")
+        {
+            dishArrayToPass=soup_dish
+        }
+        else if(sectionData[indexPath.section][indexPath.row].dish_category=="Dessert")
+        {
+            dishArrayToPass=dessert
+        }
         self.performSegue(withIdentifier: "dishViewSegue", sender: self)
     }
     
@@ -114,6 +131,7 @@ class MealTableViewController: UITableViewController {
         
         // set a variable in the second view controller with the data to pass
         dishController.dishDataReceived=valueToPass
+        dishController.dishArrayforSwipe=dishArrayToPass
         
     }
     
