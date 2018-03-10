@@ -104,7 +104,11 @@ class MealTableViewController: UITableViewController {
         // Segue to the second view controller
         let indexPath = tableView.indexPathForSelectedRow!
         valueToPass = sectionData[indexPath.section][indexPath.row]
-        if(sectionData[indexPath.section][indexPath.row].dish_category=="Appetizer")
+        if(indexPath.section==0)
+        {
+             dishArrayToPass=recommended_dishes
+        }
+        else if(sectionData[indexPath.section][indexPath.row].dish_category=="Appetizer")
         {
             dishArrayToPass=appetizer_dish
         }
