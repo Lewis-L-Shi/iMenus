@@ -69,7 +69,6 @@ class DishViewController: UIViewController {
             if dish.dish_name==dishDataReceived.dish_name
             {
                 dishIndex=count
-                print(dishIndex)
                 break
             }
             count=count+1
