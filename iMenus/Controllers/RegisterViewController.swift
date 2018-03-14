@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CryptoSwift
 class RegisterViewController: UIViewController {
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
