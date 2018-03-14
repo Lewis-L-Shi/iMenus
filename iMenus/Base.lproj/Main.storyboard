@@ -189,13 +189,14 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
-                                    <segue destination="iZP-uU-gjU" kind="show" id="uO3-K9-oVl"/>
+                                    <segue destination="iZP-uU-gjU" kind="presentation" id="uO3-K9-oVl"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Z51-04-47u"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Imq-CC-0Ky"/>
                     <connections>
                         <outlet property="passwordTextField" destination="o7G-t8-hL9" id="aLX-2T-tJF"/>
                         <outlet property="usernameTextField" destination="gxo-wb-rhh" id="Ut8-ce-coy"/>
@@ -228,7 +229,7 @@
                                 <state key="normal" title="Create Account"/>
                                 <connections>
                                     <action selector="createAccountButtonTapped:" destination="iZP-uU-gjU" eventType="touchUpInside" id="LtF-i8-fFo"/>
-                                    <segue destination="DJx-OZ-J9h" kind="presentation" id="g1d-Tm-tqw"/>
+                                    <segue destination="DJx-OZ-J9h" kind="show" identifier="ReturnToLogin" id="g1d-Tm-tqw"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Register" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsB-XA-YlG">
@@ -447,6 +448,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="m1B-j8-DJO"/>
+        <segue reference="g1d-Tm-tqw"/>
     </inferredMetricsTieBreakers>
 </document>

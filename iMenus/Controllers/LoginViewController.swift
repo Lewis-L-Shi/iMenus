@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var usernameTextField: UITextField!
@@ -15,7 +14,7 @@ class LoginViewController: UIViewController {
     var userDetailsToBePassed:User!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        definesPresentationContext = true
         // Do any additional setup after loading the view.
     }
     override func didReceiveMemoryWarning() {
