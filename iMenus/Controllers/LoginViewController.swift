@@ -28,9 +28,9 @@ class LoginViewController: UIViewController {
         //Query db server here for login info
         var foundUsers = [User]()
         foundUsers=UserDataHelper.getUser(uusername:username)
-        let decryptedpassword:String=AES256CBC.decryptString(foundUsers[0].password,password: foundUsers[0].salt)!
+        
         if(!foundUsers.isEmpty)
-        {
+        {   let decryptedpassword:String=AES256CBC.decryptString(foundUsers[0].password,password: foundUsers[0].salt)!
             if(password==decryptedpassword)
             {
                 UserDefaults.standard.set(username,forKey: "username")
