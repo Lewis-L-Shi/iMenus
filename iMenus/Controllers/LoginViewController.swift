@@ -28,7 +28,16 @@ class LoginViewController: UIViewController {
         //Query db server here for login info
         var foundUsers = [User]()
         foundUsers=UserDataHelper.getUser(uusername:username)
-        
+        if(username.isEmpty)
+        {
+            displayAlertMessage(userMessage: "All fields are required!")
+            return
+        }
+        if(password.isEmpty)
+        {
+            displayAlertMessage(userMessage: "All fields are required!")
+            return
+        }
         if(!foundUsers.isEmpty)
         {   let decryptedpassword:String=AES256CBC.decryptString(foundUsers[0].password,password: foundUsers[0].salt)!
             if(password==decryptedpassword)
