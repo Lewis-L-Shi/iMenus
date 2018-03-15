@@ -28,12 +28,27 @@ class DishViewController: UIViewController {
     var dishArrayforSwipe:[Dish]!
     var dishIndex:NSInteger!
     var maximages:Int!
+    var urlStr: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Set Up Url
+        urlStr = setupURL(name: dishDataReceived.dish_name)
+        //Set Tap Gesture for Image
+        let imageTapGesture = UITapGestureRecognizer(target: self, action: #selector(DishViewController.imageTapped(gesture:)))
+        dishImage.addGestureRecognizer(imageTapGesture)
+        dishImage.isUserInteractionEnabled = true
+        //Set Up Font and Tab Gesture for name Label
+        let underlineAttribute = [NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue]
+        let underlineAttributedString = NSAttributedString(string: dishDataReceived.dish_name, attributes: underlineAttribute)
+        dishName.attributedText = underlineAttributedString
+        let labelTapGesture = UITapGestureRecognizer(target: self, action: #selector(DishViewController.labelTapped(gesture:)))
+        dishName.addGestureRecognizer(labelTapGesture)
+        dishName.isUserInteractionEnabled = true
+        dishName.textColor = UIColor.blue
+        
         maximages=dishArrayforSwipe.count-1
         dishImage.image=dishDataReceived.dish_photo
-        dishName.text=dishDataReceived.dish_name
         dishDescription.text=dishDataReceived.dish_description
         self.title=dishDataReceived.dish_name
         ratingControl.dishViewController=self
@@ -69,7 +84,6 @@ class DishViewController: UIViewController {
             if dish.dish_name==dishDataReceived.dish_name
             {
                 dishIndex=count
-                print(dishIndex)
                 break
             }
             count=count+1
@@ -83,6 +97,7 @@ class DishViewController: UIViewController {
         swipeLeft.direction = UISwipeGestureRecognizerDirection.left
         self.view.addGestureRecognizer(swipeLeft)
     }
+    
     func onUserAction(data: Int)
     {
         changedRating=Double(data)
@@ -103,6 +118,36 @@ class DishViewController: UIViewController {
         DishDataHelper.updateDishRating(ddish_Id: dishArrayforSwipe[dishIndex].dish_id, newRating: newAvgRating, newNoOfRatings: (dishArrayforSwipe[dishIndex].num_of_ratings!+1))
         
     }
+    
+    @objc func labelTapped(gesture: UIGestureRecognizer) {
+        // if the tapped view is a UIImageView then set it to imageview
+        if (gesture.view as? UILabel) != nil {
+            if let imageUrl = URL(string: urlStr) {
+                UIApplication.shared.open(imageUrl)
+            }
+        }
+    }
+    
+    @objc func imageTapped(gesture: UIGestureRecognizer) {
+        // if the tapped view is a UIImageView then set it to imageview
+        if (gesture.view as? UIImageView) != nil {
+            if let imageUrl = URL(string: urlStr+"&tbm=isch") {
+                UIApplication.shared.open(imageUrl)
+            }
+        }
+    }
+    
+    private func setupURL(name: String) -> String {
+        var resUrl = "http://www.google.com/search?q="
+        let tokenArr = name.components(separatedBy: " ")
+        for item in tokenArr {
+            resUrl.append(item)
+            resUrl.append("+")
+        }
+        resUrl.removeLast()
+        return resUrl
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
