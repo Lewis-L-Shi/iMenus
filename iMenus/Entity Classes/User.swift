@@ -22,7 +22,8 @@ class User{
     var username:String
     var emailId:String
     var password:String
-    init?(user_id:Int64,username: String, emailId:String, password: String) {
+    var salt:String
+    init?(user_id:Int64,username: String, emailId:String, password: String, salt:String) {
         if username.isEmpty {
             return nil
         }
@@ -30,6 +31,7 @@ class User{
         self.username = username
         self.emailId = emailId
         self.password=password
+        self.salt=salt
     }
 //    required convenience init(coder aDecoder: NSCoder) {
 //        let user_id = aDecoder.decodeObject(forKey: "user_id")as! Int64

@@ -71,7 +71,10 @@ class RegisterViewController: UIViewController {
             return;
         }
         //store user data in database. for now user defaults
-        UserDataHelper.addUser(uusername: username, uemailId: emailId, upassword: password)
+        let salt = AES256CBC.generatePassword()  // returns random 32 char string
+        // get AES-256 CBC encrypted string
+        let encrypted:String = AES256CBC.encryptString(password, password: salt)!
+        UserDataHelper.addUser(uusername: username, uemailId: emailId, upassword: encrypted,usalt: salt)
         //let user=UserDataHelper.getUser(uusername: username)
         UserDefaults.standard.set(emailId, forKey: "emailId")
         UserDefaults.standard.set(username, forKey: "username")
