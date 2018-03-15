@@ -170,11 +170,27 @@ class DishViewController: UIViewController {
                     
                     dishIndex = maximages
                 }
+                //Set Up Url
+                
+                urlStr = setupURL(name: dishArrayforSwipe[dishIndex].dish_name)
+                //Set Tap Gesture for Image
                 dishImage.image=dishArrayforSwipe[dishIndex].dish_photo
+                let imageTapGesture = UITapGestureRecognizer(target: self, action: #selector(DishViewController.imageTapped(gesture:)))
+                dishImage.addGestureRecognizer(imageTapGesture)
+                dishImage.isUserInteractionEnabled = true
                 dishName.text=dishArrayforSwipe[dishIndex].dish_name
+                //Set Up Font and Tab Gesture for name Label
+                let underlineAttribute = [NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue]
+                let underlineAttributedString = NSAttributedString(string: dishArrayforSwipe[dishIndex].dish_name, attributes: underlineAttribute)
+                dishName.attributedText = underlineAttributedString
+                let labelTapGesture = UITapGestureRecognizer(target: self, action: #selector(DishViewController.labelTapped(gesture:)))
+                dishName.addGestureRecognizer(labelTapGesture)
+                dishName.isUserInteractionEnabled = true
+                dishName.textColor = UIColor.blue
                 dishDescription.text=dishArrayforSwipe[dishIndex].dish_description
                 self.title=dishArrayforSwipe[dishIndex].dish_name
                 ratingControl.dishViewController=self
+                
                 if(dishArrayforSwipe[dishIndex].dish_rating==nil)
                 {
                     previousRating=0
@@ -215,10 +231,23 @@ class DishViewController: UIViewController {
                     dishIndex = 0
                 }
                 
-                //set next dish here
-                //imageView.image = UIImage(named: imageList[imageIndex])
+                //Set Up Url
+                
+                urlStr = setupURL(name: dishArrayforSwipe[dishIndex].dish_name)
+                //Set Tap Gesture for Image
                 dishImage.image=dishArrayforSwipe[dishIndex].dish_photo
+                let imageTapGesture = UITapGestureRecognizer(target: self, action: #selector(DishViewController.imageTapped(gesture:)))
+                dishImage.addGestureRecognizer(imageTapGesture)
+                dishImage.isUserInteractionEnabled = true
                 dishName.text=dishArrayforSwipe[dishIndex].dish_name
+                //Set Up Font and Tab Gesture for name Label
+                let underlineAttribute = [NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue]
+                let underlineAttributedString = NSAttributedString(string: dishArrayforSwipe[dishIndex].dish_name, attributes: underlineAttribute)
+                dishName.attributedText = underlineAttributedString
+                let labelTapGesture = UITapGestureRecognizer(target: self, action: #selector(DishViewController.labelTapped(gesture:)))
+                dishName.addGestureRecognizer(labelTapGesture)
+                dishName.isUserInteractionEnabled = true
+                dishName.textColor = UIColor.blue
                 dishDescription.text=dishArrayforSwipe[dishIndex].dish_description
                 self.title=dishArrayforSwipe[dishIndex].dish_name
                 ratingControl.dishViewController=self
