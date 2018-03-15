@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        definesPresentationContext = true
         // Do any additional setup after loading the view, typically from a nib.
         
         logoutButton.isHidden = true

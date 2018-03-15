@@ -11,6 +11,7 @@
 		91291FE7203EBFE6001EC753 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91291FDE203EBFE5001EC753 /* RegisterViewController.swift */; };
 		91291FE8203EBFE6001EC753 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91291FE5203EBFE6001EC753 /* LoginViewController.swift */; };
 		91291FE9203EBFE6001EC753 /* RatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91291FE6203EBFE6001EC753 /* RatingController.swift */; };
+		916906302059EA1300E2ABDD /* AES256CBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9169062F2059EA1300E2ABDD /* AES256CBC.swift */; };
 		9175189D203ECB2200AD5E51 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9175189C203ECB2200AD5E51 /* User.swift */; };
 		91C1925F2029062E00CCCBF0 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C1925E2029062E00CCCBF0 /* Dish.swift */; };
 		91C1926120290A3E00CCCBF0 /* MealTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C1926020290A3E00CCCBF0 /* MealTableViewController.swift */; };
@@ -129,6 +130,7 @@
 		91291FDE203EBFE5001EC753 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		91291FE5203EBFE6001EC753 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		91291FE6203EBFE6001EC753 /* RatingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingController.swift; sourceTree = "<group>"; };
+		9169062F2059EA1300E2ABDD /* AES256CBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AES256CBC.swift; sourceTree = "<group>"; };
 		9175189C203ECB2200AD5E51 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		91C1925E2029062E00CCCBF0 /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		91C1926020290A3E00CCCBF0 /* MealTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 		F6379C1D203E42EE004F4A45 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9169062F2059EA1300E2ABDD /* AES256CBC.swift */,
 				91291FE5203EBFE6001EC753 /* LoginViewController.swift */,
 				91291FE6203EBFE6001EC753 /* RatingController.swift */,
 				91291FDE203EBFE5001EC753 /* RegisterViewController.swift */,
@@ -507,6 +510,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6C1E38A203D77A200122663 /* Restaurant.swift in Sources */,
+				916906302059EA1300E2ABDD /* AES256CBC.swift in Sources */,
 				91C770A520246F8B00BF72C1 /* RestaurantController.swift in Sources */,
 				F6C1E384203D151300122663 /* iMenusDatabase.swift in Sources */,
 				91C1925F2029062E00CCCBF0 /* Dish.swift in Sources */,

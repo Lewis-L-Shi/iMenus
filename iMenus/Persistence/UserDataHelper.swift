@@ -18,9 +18,10 @@ class UserDataHelper {
     static let username = Expression<String>("username")
     static let email = Expression<String>("email")
     static let password = Expression<String>("password")
-    static func addUser(uusername: String, uemailId: String, upassword: String) {
+    static let salt=Expression<String>("salt")
+    static func addUser(uusername: String, uemailId: String, upassword: String, usalt:String) {
         do {
-            let insert = users.insert(username <- uusername, email <- uemailId, password <- upassword)
+            let insert = users.insert(username <- uusername, email <- uemailId, password <- upassword, salt <- usalt)
            // let insert = users.insert(username <- username, emailId <- emailId, password <- password)
             try myDB.run(insert)
             return
@@ -40,7 +41,8 @@ class UserDataHelper {
                     user_id: uuser[user_id],
                     username: uuser[username],
                     emailId: uuser[email],
-                    password: uuser[password])!)
+                    password: uuser[password],
+                    salt: uuser[salt])!)
             }
         } catch {
             print("Select failed")
@@ -58,7 +60,8 @@ class UserDataHelper {
                     user_id: uuser[user_id],
                     username: uuser[username],
                     emailId: uuser[email],
-                    password: uuser[password])!)
+                    password: uuser[password],
+                    salt: uuser[salt])!)
             }
         } catch {
             print("Select failed")

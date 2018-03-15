@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class RegisterViewController: UIViewController {
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
@@ -17,7 +16,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     override func didReceiveMemoryWarning() {
@@ -72,10 +71,11 @@ class RegisterViewController: UIViewController {
             return;
         }
         //store user data in database. for now user defaults
-        UserDataHelper.addUser(uusername: username, uemailId: emailId, upassword: password)
+        let salt = AES256CBC.generatePassword()  // returns random 32 char string
+        // get AES-256 CBC encrypted string
+        let encrypted:String = AES256CBC.encryptString(password, password: salt)!
+        UserDataHelper.addUser(uusername: username, uemailId: emailId, upassword: encrypted,usalt: salt)
         //let user=UserDataHelper.getUser(uusername: username)
-        print("after get")
-      // print(user.emailId)
         UserDefaults.standard.set(emailId, forKey: "emailId")
         UserDefaults.standard.set(username, forKey: "username")
         UserDefaults.standard.set(password, forKey: "password")
@@ -86,13 +86,10 @@ class RegisterViewController: UIViewController {
         let successMsg = UIAlertController(title:"Alert",message:"Registeration Successful!",preferredStyle:UIAlertControllerStyle.alert)
         let okAction = UIAlertAction(title:"Ok",style:UIAlertActionStyle.default){
             action in
-            self.dismiss(animated: true,completion:nil)
+            self.dismiss(animated: false,completion:nil)
         }
         successMsg.addAction(okAction)
         self.present(successMsg,animated:true,completion:nil)
-   
-        
-        
     }
     func displayAlertMessage(userMessage: String)
     {
@@ -114,3 +111,5 @@ class RegisterViewController: UIViewController {
     */
 
 }
+
+
